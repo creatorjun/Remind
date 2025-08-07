@@ -1,0 +1,34 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "C/C++: g++.exe build active file",
+            "command": "C:\\msys64\\mingw64\\bin\\g++.exe",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "-DUNICODE",
+                "-D_UNICODE",
+                // [수정된 부분] 모든 소스 파일을 한 번씩만 포함합니다.
+                "${workspaceFolder}\\main.cpp",
+                "${workspaceFolder}\\View.cpp",
+                "${workspaceFolder}\\Worker.cpp",
+                "-o",
+                "${fileDirname}\\main.exe",
+                "-mwindows"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "컴파일러: C:\\msys64\\mingw64\\bin\\g++.exe"
+        }
+    ]
+}
